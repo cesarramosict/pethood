@@ -2,14 +2,7 @@
 
 <p align="center"><i>Le réseau des voisins à quatre pattes</i></p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-21-E8503F?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Spring%20Boot-4.1.2-4EC5B1?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot 4.1.2">
-  <img src="https://img.shields.io/badge/MariaDB-10.4-2E3A59?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB 10.4">
-  <img src="https://img.shields.io/badge/Flyway-migrations-7B6CF6?style=flat-square&logo=flyway&logoColor=white" alt="Flyway">
-  <img src="https://img.shields.io/badge/Thymeleaf-templates-5A6478?style=flat-square&logo=thymeleaf&logoColor=white" alt="Thymeleaf">
-  <img src="https://img.shields.io/badge/statut-en%20d%C3%A9veloppement-FFC93C?style=flat-square" alt="En développement">
-</p>
+
 
 <p align="center">
   <b>Application web de garde d'animaux entre voisins, à Bruxelles.</b><br>
