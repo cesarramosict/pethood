@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="docs/images/pethood-banner.png" alt="PetHood - Le réseau des voisins à quatre pattes" width="100%">
-</p>
+<h1 align="center">PetHood</h1>
+
+<p align="center"><i>Le réseau des voisins à quatre pattes</i></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-21-E8503F?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21">
@@ -198,7 +198,3 @@ src/main/resources
 **Julio César Ramos do Carmo**
 Étudiant en dernière année - ICC Bruxelles (Institut des Carrières Commerciales)
 GitHub : [cesarramosict](https://github.com/cesarramosict)
-
----
-
-<sub>Ce README et sa bannière ont été réalisés avec l'aide d'un assistant IA (Claude, Anthropic), puis relus par l'auteur, conformément à la Charte IA de l'ICC.</sub>
