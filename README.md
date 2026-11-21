@@ -2,26 +2,10 @@
 
 <p align="center"><i>Le réseau des voisins à quatre pattes</i></p>
 
-
-
 <p align="center">
   <b>Application web de garde d'animaux entre voisins, à Bruxelles.</b><br>
   Travail de fin d'études - Bachelier en informatique (développement d'applications) - ICC Bruxelles - 2026-2027
 </p>
-
-
-
-```bash
-git clone https://github.com/cesarramosict/pethood.git
-cd pethood
-./mvnw spring-boot:run
-```
-
-Sous Windows : `mvnw.cmd spring-boot:run`.
-
-Ouvrir ensuite [http://localhost:8080](http://localhost:8080).
-
----
 
 ##  Structure du projet
 
