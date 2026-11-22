@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Le titre vient du contrôleur -->
+    <title th:text="${title}">Espèces</title>
+</head>
+<body>
+<h1 th:text="${title}">Liste des espèces</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Français</th>
+        <th>Néerlandais</th>
+        <th>Anglais</th>
+        <th>Active</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Une ligne par espèce -->
+    <tr th:each="s : ${species}">
+        <td th:text="${s.code}"></td>
+        <td th:text="${s.nameFr}"></td>
+        <td th:text="${s.nameNl}"></td>
+        <td th:text="${s.nameEn}"></td>
+        <td th:text="${s.active} ? 'Oui' : 'Non'"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
