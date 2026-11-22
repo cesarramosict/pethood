@@ -35,4 +35,10 @@ public class SpeciesService {
     public List<Species> getActiveSpecies() {
         return repository.findByActiveTrue();
     }
+    /**
+     * Retourne une espèce à partir de son id, ou null si elle n'existe pas.
+     */
+    public Species getSpecies(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }

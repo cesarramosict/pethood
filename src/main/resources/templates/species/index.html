@@ -22,7 +22,7 @@
     <!-- Une ligne par espèce -->
     <tr th:each="s : ${species}">
         <td th:text="${s.code}"></td>
-        <td th:text="${s.nameFr}"></td>
+        <td><a th:href="@{/species/{id}(id=${s.id})}" th:text="${s.nameFr}"></a></td>
         <td th:text="${s.nameNl}"></td>
         <td th:text="${s.nameEn}"></td>
         <td th:text="${s.active} ? 'Oui' : 'Non'"></td>

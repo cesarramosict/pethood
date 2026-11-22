@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Espèce</title>
+</head>
+<body>
+<h1 th:text="${species.nameFr}">Nom de l'espèce</h1>
+
+<!-- Détail de l'espèce -->
+<ul>
+    <li>Code : <span th:text="${species.code}"></span></li>
+    <li>Néerlandais : <span th:text="${species.nameNl}"></span></li>
+    <li>Anglais : <span th:text="${species.nameEn}"></span></li>
+    <li>Active : <span th:text="${species.active} ? 'Oui' : 'Non'"></span></li>
+</ul>
+
+<!-- Retour à la liste -->
+<a th:href="@{/species}">Retour à la liste</a>
+</body>
+</html>

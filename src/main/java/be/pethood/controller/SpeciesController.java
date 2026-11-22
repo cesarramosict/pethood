@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -34,5 +35,18 @@ public class SpeciesController {
 
         // Nom du template : templates/species/index.html
         return "species/index";
+    }
+    /**
+     * Affiche le détail d'une espèce.
+     */
+    @GetMapping("/species/{id}")
+    public String show(@PathVariable Long id, Model model) {
+        Species species = service.getSpecies(id);
+
+        // Données envoyées à la vue
+        model.addAttribute("species", species);
+        model.addAttribute("title", "Fiche d'une espèce");
+
+        return "species/show";
     }
 }
