@@ -82,4 +82,19 @@ public class SpeciesController {
         return "redirect:/species";
     }
 
+    /**
+     * Affiche le formulaire de modification d'une espèce.
+     */
+    @GetMapping("/species/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+        // On cherche l'espèce à modifier dans la base de données
+        Species species = service.getSpecies(id);
+
+        // Le formulaire sera rempli avec les données de cette espèce
+        model.addAttribute("species", species);
+        model.addAttribute("title", "Modifier une espèce");
+
+        return "species/edit";
+    }
+
 }

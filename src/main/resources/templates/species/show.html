@@ -15,7 +15,11 @@
     <li>Active : <span th:text="${species.active} ? 'Oui' : 'Non'"></span></li>
 </ul>
 
+
+
 <!-- Retour à la liste -->
+<!-- Lien vers le formulaire de modification -->
+<a th:href="@{/species/{id}/edit(id=${species.id})}">Modifier</a>
 <a th:href="@{/species}">Retour à la liste</a>
 </body>
 </html>

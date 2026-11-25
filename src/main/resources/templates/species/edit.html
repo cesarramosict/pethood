@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Modifier une espèce</title>
+</head>
+<body>
+<h1 th:text="${title}">Ajouter une espèce</h1>
+
+<!-- Formulaire lié à l'objet "species" envoyé par le contrôleur -->
+<form th:action="@{/species/{id}/edit(id=${species.id})}" th:object="${species}" method="post">
+    <p>
+        <label for="code">Code</label>
+        <input type="text" id="code" th:field="*{code}">
+        <span th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></span>
+    </p>
+    <p>
+        <label for="nameFr">Nom en français</label>
+        <input type="text" id="nameFr" th:field="*{nameFr}">
+        <span th:if="${#fields.hasErrors('nameFr')}" th:errors="*{nameFr}"></span>
+    </p>
+    <p>
+        <label for="nameNl">Nom en néerlandais</label>
+        <input type="text" id="nameNl" th:field="*{nameNl}">
+        <span th:if="${#fields.hasErrors('nameNl')}" th:errors="*{nameNl}"></span>
+    </p>
+    <p>
+        <label for="nameEn">Nom en anglais</label>
+        <input type="text" id="nameEn" th:field="*{nameEn}">
+        <span th:if="${#fields.hasErrors('nameEn')}" th:errors="*{nameEn}"></span>
+    </p>
+    <button type="submit">Mettre à jour</button>
+</form>
+
+<a th:href="@{/species}">Annuler</a>
+</body>
+</html>
