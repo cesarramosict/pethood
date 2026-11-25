@@ -12,18 +12,22 @@
     <p>
         <label for="code">Code</label>
         <input type="text" id="code" th:field="*{code}">
+        <span th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></span>
     </p>
     <p>
         <label for="nameFr">Nom en français</label>
         <input type="text" id="nameFr" th:field="*{nameFr}">
+        <span th:if="${#fields.hasErrors('nameFr')}" th:errors="*{nameFr}"></span>
     </p>
     <p>
         <label for="nameNl">Nom en néerlandais</label>
         <input type="text" id="nameNl" th:field="*{nameNl}">
+        <span th:if="${#fields.hasErrors('nameNl')}" th:errors="*{nameNl}"></span>
     </p>
     <p>
         <label for="nameEn">Nom en anglais</label>
         <input type="text" id="nameEn" th:field="*{nameEn}">
+        <span th:if="${#fields.hasErrors('nameEn')}" th:errors="*{nameEn}"></span>
     </p>
     <button type="submit">Enregistrer</button>
 </form>

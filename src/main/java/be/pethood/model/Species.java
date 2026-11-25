@@ -1,6 +1,8 @@
 package be.pethood.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 /**
  * Espèce d'animal (chien, chat...), avec le nom en 3 langues.
@@ -15,12 +17,27 @@ public class Species {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Le code est obligatoire, 30 caractères maximum
+    @NotBlank(message = "Le code est obligatoire.")
+    @Size(max = 30, message = "Le code ne peut pas dépasser 30 caractères.")
     private String code;
-    private String nameFr;
-    private String nameNl;
-    private String nameEn;
-    private boolean active = true;
 
+    // Le nom en français est obligatoire, 60 caractères maximum
+    @NotBlank(message = "Le nom en français est obligatoire.")
+    @Size(max = 60, message = "Le nom ne peut pas dépasser 60 caractères.")
+    private String nameFr;
+
+    // Le nom en néerlandais est obligatoire, 60 caractères maximum
+    @NotBlank(message = "Le nom en néerlandais est obligatoire.")
+    @Size(max = 60, message = "Le nom ne peut pas dépasser 60 caractères.")
+    private String nameNl;
+
+    // Le nom en anglais est obligatoire, 60 caractères maximum
+    @NotBlank(message = "Le nom en anglais est obligatoire.")
+    @Size(max = 60, message = "Le nom ne peut pas dépasser 60 caractères.")
+    private String nameEn;
+
+    private boolean active = true;
     // Constructeur vide : utilisé par JPA et par le formulaire
     public Species() {}
 

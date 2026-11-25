@@ -41,4 +41,11 @@ public class SpeciesService {
     public Species getSpecies(Long id) {
         return repository.findById(id).orElse(null);
     }
+
+    /**
+     * Enregistre une nouvelle espèce dans la base de données.
+     */
+    public void addSpecies(Species species) {
+        repository.save(species);
+    }
 }

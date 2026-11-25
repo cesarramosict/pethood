@@ -2,11 +2,15 @@ package be.pethood.controller;
 
 import be.pethood.model.Species;
 import be.pethood.service.SpeciesService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -60,4 +64,22 @@ public class SpeciesController {
 
         return "species/create";
     }
+    /**
+     * Enregistre l'espèce envoyée par le formulaire.
+     */
+    @PostMapping("/species/create")
+    public String store(@Valid @ModelAttribute("species") Species species,
+                        BindingResult bindingResult, Model model) {
+        // S'il y a des erreurs, on réaffiche le formulaire avec les messages
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("title", "Ajouter une espèce");
+            return "species/create";
+        }
+
+        service.addSpecies(species);
+
+        // Retour à la liste après l'enregistrement
+        return "redirect:/species";
+    }
+
 }
