@@ -21,7 +21,8 @@ public class Species {
     private String nameEn;
     private boolean active = true;
 
-    protected Species() {}
+    // Constructeur vide : utilisé par JPA et par le formulaire
+    public Species() {}
 
     public Long getId() {
         return id;

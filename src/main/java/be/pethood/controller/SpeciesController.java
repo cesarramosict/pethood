@@ -49,4 +49,15 @@ public class SpeciesController {
 
         return "species/show";
     }
+    /**
+     * Affiche le formulaire de création d'une espèce.
+     */
+    @GetMapping("/species/create")
+    public String create(Model model) {
+        // Objet vide que le formulaire va remplir
+        model.addAttribute("species", new Species());
+        model.addAttribute("title", "Ajouter une espèce");
+
+        return "species/create";
+    }
 }

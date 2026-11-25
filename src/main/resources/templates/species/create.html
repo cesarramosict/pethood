@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Ajouter une espèce</title>
+</head>
+<body>
+<h1 th:text="${title}">Ajouter une espèce</h1>
+
+<!-- Formulaire lié à l'objet "species" envoyé par le contrôleur -->
+<form th:action="@{/species/create}" th:object="${species}" method="post">
+    <p>
+        <label for="code">Code</label>
+        <input type="text" id="code" th:field="*{code}">
+    </p>
+    <p>
+        <label for="nameFr">Nom en français</label>
+        <input type="text" id="nameFr" th:field="*{nameFr}">
+    </p>
+    <p>
+        <label for="nameNl">Nom en néerlandais</label>
+        <input type="text" id="nameNl" th:field="*{nameNl}">
+    </p>
+    <p>
+        <label for="nameEn">Nom en anglais</label>
+        <input type="text" id="nameEn" th:field="*{nameEn}">
+    </p>
+    <button type="submit">Enregistrer</button>
+</form>
+
+<a th:href="@{/species}">Annuler</a>
+</body>
+</html>
