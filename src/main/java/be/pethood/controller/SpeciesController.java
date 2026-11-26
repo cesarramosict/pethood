@@ -97,4 +97,26 @@ public class SpeciesController {
         return "species/edit";
     }
 
+    /**
+     * Enregistre les modifications d'une espèce.
+     */
+    @PostMapping("/species/{id}/edit")
+    public String update(@PathVariable Long id,
+                         @Valid @ModelAttribute("species") Species species,
+                         BindingResult bindingResult, Model model) {
+        // L'id vient de l'adresse : on le met dans l'objet
+        species.setId(id);
+
+        // S'il y a des erreurs, on réaffiche le formulaire avec les messages
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("title", "Modifier une espèce");
+            return "species/edit";
+        }
+
+        service.updateSpecies(species);
+
+        // Retour à la fiche de l'espèce modifiée
+        return "redirect:/species/" + id;
+    }
+
 }

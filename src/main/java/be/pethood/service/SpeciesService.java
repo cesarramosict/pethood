@@ -48,4 +48,12 @@ public class SpeciesService {
     public void addSpecies(Species species) {
         repository.save(species);
     }
+
+    /**
+     * Met à jour une espèce existante dans la base de données.
+     */
+    public void updateSpecies(Species species) {
+        // L'objet a un id : save() fait un UPDATE au lieu d'un INSERT
+        repository.save(species);
+    }
 }
