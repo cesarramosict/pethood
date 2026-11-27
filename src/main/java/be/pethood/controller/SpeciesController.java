@@ -119,4 +119,15 @@ public class SpeciesController {
         return "redirect:/species/" + id;
     }
 
+    /**
+     * Désactive une espèce (suppression logique).
+     */
+    @PostMapping("/species/{id}/deactivate")
+    public String deactivate(@PathVariable Long id) {
+        service.deactivateSpecies(id);
+
+        // Retour à la liste : l'espèce apparaît avec "Non" dans la colonne Active
+        return "redirect:/species";
+    }
+
 }

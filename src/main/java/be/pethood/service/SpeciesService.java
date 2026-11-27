@@ -56,4 +56,17 @@ public class SpeciesService {
         // L'objet a un id : save() fait un UPDATE au lieu d'un INSERT
         repository.save(species);
     }
+
+    /**
+     * Désactive une espèce (suppression logique) : elle reste dans la base.
+     */
+    public void deactivateSpecies(Long id) {
+        Species species = getSpecies(id);
+
+        // On vérifie que l'espèce existe avant de la modifier
+        if (species != null) {
+            species.setActive(false);
+            repository.save(species);
+        }
+    }
 }

@@ -15,11 +15,14 @@
     <li>Active : <span th:text="${species.active} ? 'Oui' : 'Non'"></span></li>
 </ul>
 
-
-
-<!-- Retour à la liste -->
 <!-- Lien vers le formulaire de modification -->
 <a th:href="@{/species/{id}/edit(id=${species.id})}">Modifier</a>
+
+<!-- Bouton de désactivation : un formulaire POST, car on modifie des données -->
+<form th:action="@{/species/{id}/deactivate(id=${species.id})}" method="post">
+    <button type="submit">Désactiver</button>
+</form>
+
+<!-- Retour à la liste -->
 <a th:href="@{/species}">Retour à la liste</a>
-</body>
 </html>
