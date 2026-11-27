@@ -5,7 +5,7 @@
     <title th:text="${title}">Modifier une espèce</title>
 </head>
 <body>
-<h1 th:text="${title}">Ajouter une espèce</h1>
+<h1 th:text="${title}">Modifier une espèce</h1>
 
 <!-- Formulaire lié à l'objet "species" envoyé par le contrôleur -->
 <form th:action="@{/species/{id}/edit(id=${species.id})}" th:object="${species}" method="post">
